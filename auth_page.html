@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="css/auth_page.css">
+    <script src="js/validate.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+        window.onload = init;
+    </script>
+</head>
+<body>
+
+<form id="auth_form" onsubmit="return validate('email', 'password');">
+    <h2>Войдите, чтобы продолжить</h2>
+    <label for="email">Введите логин</label>
+    <input id="email" type="text" size="40">
+    <p id="error_email"></p>
+    <label for="password">Введите пароль</label>
+    <input id="password" type="password" size="40">
+    <p id="error_password"></p>
+    <button type="submit">Войти</button>
+</form>
+
+<div id="clock"></div>
+
+</body>
+</html>
