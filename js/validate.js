@@ -1,4 +1,4 @@
-function validate(emailId, passwordId) {
+function validate(emailId, passwordId, phoneId) {
 	//счетчик количества ошибок
 	var errorCount = 0;
 
@@ -7,6 +7,9 @@ function validate(emailId, passwordId) {
 
 	var password = getElementValue(passwordId);
 	validatePassword(password);
+
+	var phone = getElementValue(phoneId);
+	validatePhone(phone);
 
 	if (errorCount) {
 		return false;
@@ -24,6 +27,8 @@ function validate(emailId, passwordId) {
 		if (reg.test(email) == false) {
 			showError('error_email', errorText);
 			errorCount++;
+		} else {
+			showError('error_email', "");
 		}
 	}
 	//Функция для проверки пароля
@@ -62,6 +67,18 @@ function validate(emailId, passwordId) {
 		}
 		if (errorCount) {
 			showError('error_password', text);
+		}
+	}
+	//Функция для проверки номера телефона
+	function validatePhone(phone) {
+		var errorText = 'Введите корректный номер телефона';
+		var reg = /^\+?[7-8]\(?\d{3}\)?\d{7}/;
+
+		if (reg.test(phone) == false) {
+			showError('error_phone', errorText);
+			errorCount++;
+		} else {
+			showError('error_phone', "");
 		}
 	}
 	//Функция для вывода ошибок

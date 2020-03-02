@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form id="auth_form" onsubmit="return validate('email', 'password');">
+<form id="auth_form" onsubmit="return validate('email', 'password', 'phone');">
     <h2>Войдите, чтобы продолжить</h2>
     <label for="email">Введите логин</label>
     <input id="email" type="text" size="40">
@@ -20,6 +20,9 @@
     <label for="password">Введите пароль</label>
     <input id="password" type="password" size="40">
     <p id="error_password"></p>
+    <label for="phone">Введите номер телефона</label>
+    <input id="phone" type="text" size="40">
+    <p id="error_phone"></p>
     <button type="submit">Войти</button>
 </form>
 
