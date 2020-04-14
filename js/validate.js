@@ -72,7 +72,7 @@ function validate(emailId, passwordId, phoneId) {
 	//Функция для проверки номера телефона
 	function validatePhone(phone) {
 		var errorText = 'Введите корректный номер телефона';
-		var reg = /^(8|7|\+7)\(?\d{3}\)?\d{7}?$/;
+		var reg = /^(8|\+7)\(?\d{3}\)?\d{7}?$/;
 
 		if (reg.test(phone) == false) {
 			showError('error_phone', errorText);
